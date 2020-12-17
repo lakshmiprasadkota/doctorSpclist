@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 
 
 class SecondPage extends StatefulWidget {
-  SecondPage({this.title , this.subtitle , this.fee, this.img} );
+  SecondPage({this.title , this.subtitle , this.fee, this.img , this.time} );
   final title ;
   final subtitle;
   final fee ;
   final img;
+  final time ;
 
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -23,6 +24,15 @@ class _SecondPageState extends State<SecondPage> {
   ];
   List<String> title = ["648", "6", "1080", '4.9'];
   List<String> subtitle = ["Patients", "Years Exp", "Surgery", "Rating"];
+
+  //week list items
+  List <String> day = ["sun" ,"mon" ,"tue" ,"wed" , "thus"];
+  List <String> date = ["1" ,"2" ,"3" ,"4" ,"5"];
+  List <String> fees = ["200" ,"120" ,"125" ,"122" ,"180"];
+  String fee ="2";
+  String active  ="5";
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,230 +67,133 @@ class _SecondPageState extends State<SecondPage> {
                                   height: 300,
                                 )),
                           ),
-                          Container(
+                           Container(
                             width: double.infinity,
-                            height: 500,
+
                             child: Stack(
                               overflow: Overflow.visible,
                               children: [
-                                Container(
-                                  padding: EdgeInsets.only(top: 100, left: 10, right: 10),
-                                  width: double.infinity,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            "Appointment",
-                                            style: TextStyle(
-                                                color: Color(0xFF344766),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Icon(
-                                                Icons.arrow_back_ios_rounded,
-                                                size: 15,
-                                                color: Color(0xFF344766),
-                                              ),
-                                              Text(
-                                                "August",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w500),
-                                              ),
-                                              Icon(
-                                                Icons.arrow_forward_ios_rounded,
-                                                size: 15,
-                                                color: Color(0xFF344766),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "Sun",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Text(
-                                                "2",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              )
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "mon",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Text(
-                                                "3",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              )
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "tue",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Text(
-                                                "4",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              )
-                                            ],
-                                          ),
-                                          Container(
-                                            height: 90,
-                                            width: 50,
-                                            padding:
-                                            EdgeInsets.only(top: 20, left: 5, right: 5),
-                                            decoration: BoxDecoration(
-                                                color: Colors.blue,
-                                                borderRadius: BorderRadius.circular(60)),
-                                            child: Column(
+
+                                  Container(
+                                    padding: EdgeInsets.only(top: 100, left: 10, right: 10),
+                                    width: double.infinity,
+                                    height: 500,
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              "Appointment",
+                                              style: TextStyle(
+                                                  color: Color(0xFF344766),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Text(
-                                                  "wed",
-                                                  style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight: FontWeight.w600,
-                                                      color: Colors.white),
+                                                Icon(
+                                                  Icons.arrow_back_ios_rounded,
+                                                  size: 15,
+                                                  color: Color(0xFF344766),
                                                 ),
                                                 Text(
-                                                  "5",
+                                                  "August",
                                                   style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight: FontWeight.w600,
-                                                      color: Colors.white),
-                                                )
+                                                      color: Color(0xFF344766),
+                                                      fontSize: 12,
+                                                      fontWeight: FontWeight.w500),
+                                                ),
+                                                Icon(
+                                                  Icons.arrow_forward_ios_rounded,
+                                                  size: 15,
+                                                  color: Color(0xFF344766),
+                                                ),
                                               ],
                                             ),
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "Fri",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Text(
-                                                "6",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              )
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              Text(
-                                                "sat",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              ),
-                                              Text(
-                                                "7",
-                                                style: TextStyle(
-                                                    color: Color(0xFF344766),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400),
-                                              )
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            "About",
-                                            style: TextStyle(
-                                                color: Color(0xFF344766),
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          FlatButton(
-                                            onPressed: () {},
-                                            highlightColor: Colors.green,
-                                            child: Text(
-                                              "Call Now",
-                                              style: TextStyle(color: Colors.green),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Text(
-                                        "Doctors that work within a community They are the frontline and first point of contact in a patient's health care. ",
-                                        style: TextStyle(
-                                            color: Color(0xFF344766),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w300),
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Container(
-                                        height: 60,
-                                        child: ListView.builder(
-                                            itemCount: clr.length,
-                                            scrollDirection: Axis.horizontal,
+                                          ],
+                                        ),
+
+                                        Container(
+                                          height: 100,
+                                            child: ListView.builder(
+                                          itemCount: day.length,
                                             shrinkWrap: true,
-                                            itemBuilder: (context, index) {
-                                              return AboutListClass(
-                                                clr: clr[index],
-                                                title: title[index],
-                                                subtitle: subtitle[index],
+                                            scrollDirection: Axis.horizontal,
+                                            itemBuilder: (context , index){
+                                              return InkWell(
+                                                child: DaysListClass(
+                                                    onTap: (){
+                                                  setState(() {
+                                                    active = date[index];
+                                                    fee = fees[index];
+                                                    print(date);
+                                                  });
+                                                },
+                                                  day: day[index],
+                                                  active: active,
+                                                  date: date[index],),
                                               );
-                                            }),
-                                      ),
-                                      SizedBox(
-                                        height: 15,
-                                      ),
-                                    ],
+                                            })),
+
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              "About",
+                                              style: TextStyle(
+                                                  color: Color(0xFF344766),
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            FlatButton(
+                                              onPressed: () {},
+                                              highlightColor: Colors.green,
+                                              child: Text(
+                                                "Call Now",
+                                                style: TextStyle(color: Colors.green),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        Text(
+                                          "Doctors that work within a community They are the front line and first point of contact in a patient's health care. ",
+                                          style: TextStyle(
+                                              color: Color(0xFF344766),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Container(
+                                          height: 60,
+                                          child: ListView.builder(
+                                              itemCount: clr.length,
+                                              scrollDirection: Axis.horizontal,
+                                              shrinkWrap: true,
+                                              itemBuilder: (context, index) {
+                                                return AboutListClass(
+                                                  clr: clr[index],
+                                                  title: title[index],
+                                                  subtitle: subtitle[index],
+                                                );
+                                              }),
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(40),
+                                        color: Colors.white),
                                   ),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(40),
-                                      color: Colors.white),
-                                ),
+
+
+
                                 Positioned(
                                   bottom: 0,
                                   child: Container(
@@ -290,7 +203,7 @@ class _SecondPageState extends State<SecondPage> {
                                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                                       children: [
                                         Text(
-                                          "Fee: 1500\-",
+                                          "Fee: Rs $fee \\-",
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w600),
@@ -329,10 +242,10 @@ class _SecondPageState extends State<SecondPage> {
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w600,
-                                              fontSize: 20),
+                                              fontSize: 18),
                                         ),
                                         SizedBox(
-                                          height: 5,
+                                          height: 3,
                                         ),
                                         Text(
                                           widget.subtitle,
@@ -342,7 +255,17 @@ class _SecondPageState extends State<SecondPage> {
                                               fontSize: 10),
                                         ),
                                         SizedBox(
-                                          height: 5,
+                                          height: 2,
+                                        ),
+                                        Text(
+                                          widget.time,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 10),
+                                        ),
+                                        SizedBox(
+                                          height: 2,
                                         ),
                                         Text(
                                           widget.fee,
@@ -373,6 +296,76 @@ class _SecondPageState extends State<SecondPage> {
   }
 }
 
+class DaysListClass extends StatefulWidget {
+  const DaysListClass({
+    this.day,
+    this.date,
+    this.active,
+    this.onTap,
+    this.fees,
+    this.fee,
+
+  }) ;
+  final String date;
+  final String day;
+  final Function onTap;
+  final String fees;
+  final String  fee;
+    final String active;
+
+  @override
+  _DaysListClassState createState() => _DaysListClassState();
+}
+
+class _DaysListClassState extends State<DaysListClass> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        widget.onTap?.call();
+
+      },
+      child: Row(
+
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 18),
+            height: 80,
+            width: 50,
+            decoration: widget.active != widget.date? BoxDecoration():BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(30),
+                color: Color(0xFF94D3DA),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFF94D3DA),
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  )
+                ]),
+            child: Column(
+
+              children: [
+                Text(widget.day , style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueGrey,
+                    fontSize: 14),),
+                Text(widget.date , style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueGrey,
+                    fontSize: 14),)
+              ],
+            ),
+
+          ),
+          SizedBox(width: 15,)
+
+        ],
+      )
+    );
+  }
+}
+
 class AboutListClass extends StatefulWidget {
   AboutListClass({this.clr, this.subtitle, this.title});
 
@@ -394,6 +387,7 @@ class _AboutListClassState extends State<AboutListClass> {
         Container(
           padding: EdgeInsets.only(top: 5),
           width: 100,
+          height: 100,
           child: Column(
             children: [
               Text(
@@ -412,7 +406,7 @@ class _AboutListClassState extends State<AboutListClass> {
           ),
         ),
         SizedBox(
-          width: 10,
+          width:8,
         )
       ],
     );

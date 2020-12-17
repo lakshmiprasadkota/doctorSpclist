@@ -14,8 +14,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   List title = [
     "Prof Dr. Lakshmi prasad",
-    "Dr jane Foster",
-    "Tommy Smith"
+    "Prof Dr. jane Foster",
+    "Prof Dr. Tommy Smith"
   ];
   List subtitle = [
     "Heart surgeon - Indian",
@@ -292,7 +292,7 @@ class _MyAppState extends State<MyApp> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  SecondPage(title: title[index], subtitle: subtitle[index], fee: price[index], img: img[index],)));
+                                                  SecondPage(title: title[index], subtitle: subtitle[index], fee: price[index], img: img[index], time: time[index],)));
                                     },
                                   ),
                                   radius: 40,
@@ -305,7 +305,7 @@ class _MyAppState extends State<MyApp> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text( tl
+                                      Text( title[index]
                                       ,
                                         style: TextStyle(
                                             fontSize: 15,
